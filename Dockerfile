@@ -17,7 +17,7 @@ RUN apt-get update \
        http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz \
     && tar xzf jdk7.tar.gz -C /opt \
     && mv /opt/jdk* /opt/java \
-    && rm /tmp/jdk8.tar.gz \
+    && rm /tmp/jdk7.tar.gz \
     && update-alternatives --install /usr/bin/java java /opt/java/bin/java 100 \
     && update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 100
 
