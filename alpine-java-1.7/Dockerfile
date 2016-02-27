@@ -24,7 +24,7 @@ ENV JAVA_HOME /opt/java
 
 # Clean S.O
 
-RUN rm -rf  /opt/jdk/jre/plugin \
+RUN rm -rf  /opt/java/jre/plugin \
        /opt/java/jre/bin/javaws \
        /opt/java/jre/bin/jjs \
        /opt/java/jre/bin/keytool \
