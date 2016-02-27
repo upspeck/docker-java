@@ -9,10 +9,9 @@ RUN apk upgrade --update \
     && wget -qO /tmp/glibc-bin-2.21-r2.apk "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-bin-2.21-r2.apk" && \
     apk add --allow-untrusted /tmp/glibc-bin-2.21-r2.apk \
     && /usr/glibc/usr/bin/ldconfig /lib /usr/glibc/usr/lib \
-    && mkdir /opt
-
+    && mkdir /opt \
 # Install Java.
-RUN cd /tmp \
+    && cd /tmp \
     && wget -qO jdk7.tar.gz \
        --header "Cookie: oraclelicense=accept-securebackup-cookie" \
        http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz \
