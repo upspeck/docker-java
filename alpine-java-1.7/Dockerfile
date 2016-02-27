@@ -1,6 +1,9 @@
 FROM alpine:latest
 MAINTAINER Jeyson Maia <jeyson@upspeck.io>
 
+# Define commonly used JAVA_HOME variable
+ENV JAVA_HOME /opt/java
+
 # Utilities
 RUN apk upgrade --update \
     && apk add --update ca-certificates wget bash \
@@ -16,14 +19,9 @@ RUN apk upgrade --update \
        --header "Cookie: oraclelicense=accept-securebackup-cookie" \
        http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz \
     && tar xzf jdk7.tar.gz -C /opt \
-    && mv /opt/jdk* /opt/java
-
-# Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /opt/java
-
+    && mv /opt/jdk* /opt/java \
 # Clean S.O
-
-RUN rm -rf  /opt/java/jre/plugin \
+    && rm -rf  /opt/java/jre/plugin \
        /opt/java/jre/bin/javaws \
        /opt/java/jre/bin/jjs \
        /opt/java/jre/bin/keytool \
